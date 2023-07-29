@@ -11,8 +11,6 @@ interface TokenProps {
         text: string;
         index: number;
         spacesAfter: number;
-        // entitySpacers?: string[];
-        // entityIds?: string[];
     },
 }
 
@@ -27,11 +25,11 @@ const Token: React.FC<TokenProps> = observer(({ token }) => {
             marginLeft={0}
             marginRight={0}
             id={`token-${token.id}`}
-            // className={`token${isSelected ? ' token--selected' : ''}`}
             position="relative"
             display="flex"
             flexDirection="column"
         >
+
             <MDTypography
                 component="span"
                 variant="body1"
@@ -39,11 +37,11 @@ const Token: React.FC<TokenProps> = observer(({ token }) => {
                 data-index={token.index}
                 sx={{
                     backgroundColor: isSelected ? 'lightblue' : 'inherit',
-                    // fontWeight: isSelected ? 'bold' : 'inherit',
                 }}
             >
                 {token.text}
             </MDTypography>
+
             <MDBox
                 display="flex"
                 flexDirection="column"
@@ -51,6 +49,7 @@ const Token: React.FC<TokenProps> = observer(({ token }) => {
             >
                 <EntitiesList key={`entity-map-idx-${token.index}`} index={token.index} />
             </MDBox>
+
         </MDBox>
     );
 });

@@ -5,9 +5,6 @@ import { Token } from '../../data/api/types/base/entities/_Token';
 export class TokenStore {
     @observable tokens: Map<string, Token> = new Map();
 
-    constructor() {
-    }
-
     @action.bound
     addTokens(tokens: Token[]) {
         tokens.forEach(token => this.tokens.set(token.id, new Token(token)));

@@ -33,10 +33,6 @@ const AnnotationWrap = observer(() => {
         }
     }, [annotationService.isLoading]);
 
-    // const handlePageChange = (page: number) => {
-    //   annotationService.pagination.setCurrentPage(page);
-    // };
-
     if (isLoading) {
         return <LoadingComponent />;
     }
@@ -51,20 +47,11 @@ const AnnotationWrap = observer(() => {
             >
                 <Grid container item justifyContent="center" alignItems="center" xs={3}>
                 </Grid>
+
                 <Grid container item justifyContent="center" alignItems="center" xs={12} md={6}>
                     <AnnotationSelector />
-                    {/* <MDPagination>
-            <MDPagination item>
-              <Icon>keyboard_arrow_left</Icon>
-            </MDPagination>
-            <MDPagination item active>1</MDPagination>
-            <MDPagination item>2</MDPagination>
-            <MDPagination item>3</MDPagination>
-            <MDPagination item>
-              <Icon>keyboard_arrow_right</Icon>
-            </MDPagination>
-          </MDPagination> */}
                 </Grid>
+
                 <Grid container item justifyContent="flex-end" alignItems="center" xs={3}>
                     <MDButton display="inline-flex" variant="gradient" color="primary" size="large" onClick={handleSubmitClick} >Accept</MDButton>
                 </Grid>

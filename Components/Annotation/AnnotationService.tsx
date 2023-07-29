@@ -10,8 +10,6 @@ import {
     Entity,
     Change,
     Doc,
-    // Token,
-    // Label,
     Revisions,
     MsgEntity,
     _Obs_Request,
@@ -22,8 +20,6 @@ import {
     MsgEntityType,
     MsgTask
 } from "../../data/api/types";
-
-
 
 export class AnnotationService {
     private _ioService: IOService;
@@ -61,7 +57,6 @@ export class AnnotationService {
         this.addDocument(msg.data.docs[0]);
     }
 
-    // TODO: doesn't use ID at all
     @action
     async loadDocumentById(id: string) {
         const req = await this._ioService.send(
@@ -228,8 +223,6 @@ export class AnnotationService {
             data: {
                 items: [revisions],
                 item_ids: [revisions.uuid],
-                // items: [doc, revisions],
-                // item_ids: [doc.uuid, revisions.uuid],
             },
         }));
         // TODO: handle response

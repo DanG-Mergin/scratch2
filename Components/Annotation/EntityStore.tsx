@@ -1,7 +1,7 @@
 import { observable, action, computed } from 'mobx';
 import { LabelStore } from './LabelStore';
 import { makeObservable } from 'mobx';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { UserError } from 'components/Notifications/NotificationStore';
 
 import { Entity } from "../../data/api/types";
@@ -34,7 +34,6 @@ export class EntityStore {
         const label = this.labelStore.getLabelById(labelId);
 
         const entity = new Entity({
-            //   id: this.entities.size + 1 + '',
             startIndex,
             endIndex,
             startChar,
@@ -117,7 +116,7 @@ export class EntityStore {
 
     @computed get entityMetaMap() {
         const entityMeta = new Map();
-        // this.overlappingEntities.forEach((startIdx, group) => {
+
         for (const [entStartIdx, group] of this.overlappingEntities) {
             group.entities.forEach((entity: Entity) => {
                 entityMeta.set(entity.uuid, {
@@ -134,7 +133,7 @@ export class EntityStore {
         endIndex = endIndex ? endIndex : startIndex;
         const entityGroups = this.overlappingEntities;
         const entities: Entity[] = [];
-        // entityGroups.forEach((entStartIdx, group) => {
+
         for (const [entStartIdx, group] of entityGroups) {
             if (entStartIdx > endIndex) {
                 return entities;
