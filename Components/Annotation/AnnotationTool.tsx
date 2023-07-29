@@ -9,7 +9,6 @@ import Icon from "@mui/material/Icon";
 import MDButton from 'components/MDButton';
 import AnnotationSelector from './AnnotationSelector';
 
-
 const AnnotationTool = () => {
     return (
         <AnnotationSvcProvider docId="123">

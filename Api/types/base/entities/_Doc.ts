@@ -12,7 +12,6 @@ export interface DocI {
     patientClasses?: string[];
     docTypes?: string[];
 }
-
 export class Doc {
     private name = "doc";
     uuid: string;
@@ -55,7 +54,6 @@ export class Doc {
         });
         this._tokens = _tokens;
     }
-
     get tokens(): Token[] {
         return this._tokens;
     }
@@ -68,7 +66,6 @@ export class Doc {
         });
         this._entities = entities;
     }
-
     get entities(): Entity[] {
         return this._entities;
     }

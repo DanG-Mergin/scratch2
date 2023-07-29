@@ -75,8 +75,8 @@ export class EntityStore {
                 }
             }
         });
-        return sorted;
 
+        return sorted;
     }
 
     @computed get overlappingEntities() {
@@ -126,6 +126,7 @@ export class EntityStore {
                 });
             });
         };
+
         return entityMeta;
     }
 
@@ -142,6 +143,7 @@ export class EntityStore {
                 entities.push(...group.entities);
             }
         };
+
         return entities;
     }
 

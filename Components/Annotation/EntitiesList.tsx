@@ -30,6 +30,7 @@ const EntitiesList: React.FC<EntitiesListProps> = observer(({ index }) => {
     };
 
     const overlappingEntities = store.getEntitiesByRange(index, index);
+
     // we're assuming that the entities will be returned according to overlap and order
     // so we can just render them in order
     const entitySpans = overlappingEntities.map((entity) => {
@@ -131,6 +132,7 @@ const EntitiesList: React.FC<EntitiesListProps> = observer(({ index }) => {
             ></MDBox>
         );
     });
+
     return (
         <>
             {entitySpans}

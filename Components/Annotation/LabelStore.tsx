@@ -6,10 +6,9 @@ import { MsgEntityType, MsgEntity, _Obs_Request, _Obs_Response, MsgAction, MsgSt
 export class LabelStore {
     private _ioService: IOService;
     private static instance: LabelStore;
+
     @observable labels: Map<string, LabelI> = new Map();
     @observable isLoaded: boolean = false;
-
-
 
     private constructor() {
         this._ioService = IOService.getInstance();
@@ -30,6 +29,7 @@ export class LabelStore {
     @action setIsLoaded(isLoaded: boolean) {
         this.isLoaded = isLoaded;
     }
+
     _onMessage(msg: _Obs_Response) {
         console.log(`label store recieved observable push ${msg}`);
     }
@@ -77,7 +77,7 @@ export class LabelStore {
         }
         return Array.from(this.labels.values());
     }
-    // returns labels organized by category
+
     getAllLabelsByCategory({ type, task }: { type?: string, task?: string }) {
         const categories = this.getLabels({ type, task })
             .map(label => label.category);

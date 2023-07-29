@@ -20,7 +20,6 @@ import {
     MsgEntityType,
     MsgTask
 } from "../../data/api/types";
-
 export class AnnotationService {
     private _ioService: IOService;
     paginationSvc: PaginationSvc;
